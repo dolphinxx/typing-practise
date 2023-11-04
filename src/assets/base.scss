@@ -1,0 +1,131 @@
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  --v-theme-primary: 33, 150, 243;
+  --v-border-color: 0, 0, 0;
+  --v-border-opacity: 0.12;
+  --v-focus-opacity: 0.12;
+  --v-hover-opacity: 0.04;
+  --v-high-emphasis-opacity: 0.87;
+  --v-medium-emphasis-opacity: 0.6;
+  --v-theme-background: 255, 255, 255;
+  --v-theme-on-background: 0, 0, 0;
+  --v-theme-on-surface: 0, 0, 0;
+  --v-theme-on-primary: 255, 255, 255;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+* {
+  scrollbar-color: rgb(var(--v-theme-primary)) #eaecef;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: #eaecef;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgb(var(--v-theme-primary));
+    border-radius: 5px;
+  }
+}
+
+body {
+  min-height: 100vh;
+  color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+  background: rgb(var(--v-theme-background));
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.5;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.elevation-0 {
+  box-shadow:
+    0px 0px 0px 0px var(--v-shadow-key-umbra-opacity, rgba(0, 0, 0, 0.2)),
+    0px 0px 0px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.14)),
+    0px 0px 0px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.12)) !important;
+}
+
+.elevation-1 {
+  box-shadow:
+    0px 2px 1px -1px var(--v-shadow-key-umbra-opacity, rgba(0, 0, 0, 0.2)),
+    0px 1px 1px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.14)),
+    0px 1px 3px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.12)) !important;
+}
+
+.elevation-2 {
+  box-shadow:
+    0px 3px 1px -2px var(--v-shadow-key-umbra-opacity, rgba(0, 0, 0, 0.2)),
+    0px 2px 2px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.14)),
+    0px 1px 5px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.12)) !important;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.btn {
+  font-size: inherit;
+  padding-block: 0;
+  padding-inline: 0;
+  display: block;
+  outline: none;
+  border: 0;
+  color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
+  padding: 0.5em 1em;
+  cursor: pointer;
+  background-color: #eeeeee;
+
+  &:hover {
+    color: #ffffff;
+    background-color: rgba(var(--v-theme-primary), var(--v-medium-emphasis-opacity));
+  }
+  &.btn-primary {
+    color: #ffffff;
+    background-color: rgb(var(--v-theme-primary));
+
+    &:hover {
+      background-color: rgba(var(--v-theme-primary), var(--v-medium-emphasis-opacity));
+    }
+  }
+}
+
+.form-field {
+  display: flex;
+  align-items: center;
+  padding: 0.5em 0;
+
+  .control-label {
+    display: block;
+    width: 8em;
+  }
+
+  .form-control {
+    flex: 1;
+  }
+}
